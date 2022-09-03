@@ -1,4 +1,4 @@
-import { IToDo } from "../../../interfaces/IToDo"
+import { IToDo } from "interfaces/IToDo"
 
 
 export interface IToDoState {

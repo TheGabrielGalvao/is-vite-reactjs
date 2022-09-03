@@ -1,7 +1,5 @@
-import { useDispatch } from 'react-redux'
-import { IToDoState } from './types'
 import { createSlice } from "@reduxjs/toolkit"
-import { AppDispatch } from '../..'
+import { IToDoState } from "./types"
 
 
 const INITIAL_STATE: IToDoState = {
