@@ -1,10 +1,11 @@
 import { put } from "@redux-saga/core/effects"
+import { getAll } from "../../../api/services/todoService"
 import { all, takeLatest } from 'redux-saga/effects'
 import {actions} from "."
 
 export function* getData() {
     try {
-        const {data} = yield actions.get()
+        const {data} = yield getAll()
         
         yield put(actions.getSuccess (data))
     }

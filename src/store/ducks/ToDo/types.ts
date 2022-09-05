@@ -2,7 +2,7 @@ import { IToDo } from "interfaces/IToDo"
 
 
 export interface IToDoState {
-    data?: IToDo[]
+    data: IToDo[]
     loading?: boolean
     error?: boolean
 }

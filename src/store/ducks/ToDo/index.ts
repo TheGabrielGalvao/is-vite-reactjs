@@ -1,5 +1,7 @@
+import { ToDo } from './../../../components/pages/Examples/Todo/index';
 import { createSlice } from "@reduxjs/toolkit"
 import { IToDoState } from "./types"
+import { RootState } from '../../';
 
 
 const INITIAL_STATE: IToDoState = {
@@ -9,12 +11,12 @@ const INITIAL_STATE: IToDoState = {
 }
 
 const toDoSlice = createSlice({
-  name: "toDo",
+  name: "toDoReducer",
   initialState: INITIAL_STATE,
   reducers: {
     get() {},
     getSuccess(state, action) {
-      state.data = action.payload.toDos
+      state.data = action.payload
     },
     getFailure(state, action) {
       state.data = action.payload.toDos
@@ -47,6 +49,6 @@ const toDoSlice = createSlice({
 export default toDoSlice.reducer
 export const { ...actions }  = toDoSlice.actions
 
-export const useToDo = (state: any) => {
-  return state.toDo as IToDoState;
+export const useToDo = (state: RootState) => {
+  return state.todo as IToDoState
 };

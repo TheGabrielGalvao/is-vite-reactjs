@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import createSagaMiddleware from '@redux-saga/core'
 import rootSaga from "./rootSaga"
+import toDoSlice from "./ducks/ToDo"
 
 const sagaMiddleware = createSagaMiddleware()
 
 const store = configureStore({
   reducer: {
-     // reducer label: reducer
+     todo: toDoSlice  
   },
   middleware: (applyMiddleware) => (applyMiddleware().concat(sagaMiddleware))
 })

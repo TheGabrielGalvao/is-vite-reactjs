@@ -1,9 +1,12 @@
+import { ToDo } from "./components/pages/Examples/Todo"
+import GlobalStyles from "./util/styles/global"
 
 function App() {
 
   return (
     <div className="App">
-      Teste
+      <GlobalStyles />
+      <ToDo />
     </div>
   )
 }
