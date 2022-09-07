@@ -11,7 +11,7 @@ export const ToDo = () => {
 
     useEffect(() => {
         dispatch((actions.get()))
-    })
+    },[])
 
     return (
         <TodoTemplate>

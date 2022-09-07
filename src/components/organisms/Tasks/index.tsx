@@ -1,6 +1,6 @@
 import {Container} from './styles'
-import {Task} from '../../molecules/Task'
 import { IToDo } from 'interfaces/IToDo'
+import { Task } from '../../../components/molecules/Task'
 
 interface Props {
   data: IToDo[]
