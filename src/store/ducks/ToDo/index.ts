@@ -4,17 +4,18 @@ import { IToDoState } from "./types"
 import { RootState } from '../../';
 
 
+
 const INITIAL_STATE: IToDoState = {
-    data: [],
-    error: false,
-    loading: false
+  data: [],
+  error: false,
+  loading: false
 }
 
 const toDoSlice = createSlice({
   name: "toDoReducer",
   initialState: INITIAL_STATE,
   reducers: {
-    get() {},
+    get() { },
     getSuccess(state, action) {
       state.data = action.payload
     },
@@ -23,7 +24,7 @@ const toDoSlice = createSlice({
     },
 
     save(state, action) {
-      state.data = action.payload.toDos
+      state.data.push(action.payload)
     },
     saveSuccess(state, action) {
       state.data = action.payload.toDos
@@ -33,13 +34,16 @@ const toDoSlice = createSlice({
     },
 
     remove(state, action) {
-      state.data = action.payload.toDos
+      //state.data = state.data.((todo) => todo.id !== action.payload.id)
+      state.loading = true
     },
     removeSuccess(state, action) {
-      state.data = action.payload.toDos
+      state.data = action.payload
+      state.loading = false
     },
     removeFailure(state, action) {
-      state.data = action.payload.toDos
+      state.loading = false
+      state.error = true
     },
   },
 })
@@ -47,7 +51,7 @@ const toDoSlice = createSlice({
 
 
 export default toDoSlice.reducer
-export const { ...actions }  = toDoSlice.actions
+export const { ...actions } = toDoSlice.actions
 
 export const useToDo = (state: RootState) => {
   return state.todo as IToDoState
