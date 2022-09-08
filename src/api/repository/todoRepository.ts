@@ -1,9 +1,10 @@
+import { AxiosResponse } from 'axios';
 import api from "../api"
 import { IToDo } from "../../interfaces/IToDo"
 
 export const getTodos = async () => {
     try {
-        const response: IToDo[] = await api.get('to-do')
+        const response = await api.get('to-do').then((response: AxiosResponse) => (response))
         
         return response
       }

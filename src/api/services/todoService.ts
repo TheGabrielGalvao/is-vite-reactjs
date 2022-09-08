@@ -1,13 +1,14 @@
+import { resolveRequest } from './../../util/helper/httpHelper';
+import { AxiosResponse } from 'axios';
 import { getTodos } from "../repository/todoRepository"
-import { IToDo } from "interfaces/IToDo"
 
 export const getAll = async () => {
-    try {
-        const response: IToDo[] = await getTodos()
-          
+    const response = await resolveRequest(
+      async () => {
+        const response: AxiosResponse = await getTodos() as AxiosResponse
         return response
-      }
-      catch {
-        return []
-      }
+      }, {} as AxiosResponse
+    )
+
+    return response
 }
