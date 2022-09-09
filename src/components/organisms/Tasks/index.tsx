@@ -7,7 +7,6 @@ interface Props {
 }
 
 export const Tasks = ({ data }: Props) => {
-
   // const stateTasks = useMemo(() => {
   //   if(tasks.length === 0) {
   //     return 'empty'
@@ -29,9 +28,7 @@ export const Tasks = ({ data }: Props) => {
 
   return (
     <Container>
-      {data.length > 0 && data.map(task => (
-        <Task task={task} />
-      ))}
+      {data.length > 0 && data.map((task) => <Task task={task} />)}
     </Container>
   )
 }

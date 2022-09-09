@@ -1,18 +1,15 @@
-import { ToDo } from './../../../components/pages/Examples/Todo/index';
-import { createSlice } from "@reduxjs/toolkit"
-import { IToDoState } from "./types"
-import { RootState } from '../../';
-
-
+import { createSlice } from '@reduxjs/toolkit'
+import { IToDoState } from './types'
+import { RootState } from '../../'
 
 const INITIAL_STATE: IToDoState = {
   data: [],
   error: false,
-  loading: false
+  loading: false,
 }
 
 const toDoSlice = createSlice({
-  name: "toDoReducer",
+  name: 'toDoReducer',
   initialState: INITIAL_STATE,
   reducers: {
     get() { },
@@ -34,7 +31,7 @@ const toDoSlice = createSlice({
     },
 
     remove(state, action) {
-      //state.data = state.data.((todo) => todo.id !== action.payload.id)
+      // state.data = state.data.((todo) => todo.id !== action.payload.id)
       state.loading = true
     },
     removeSuccess(state, action) {
@@ -48,11 +45,9 @@ const toDoSlice = createSlice({
   },
 })
 
-
-
 export default toDoSlice.reducer
 export const { ...actions } = toDoSlice.actions
 
 export const useToDo = (state: RootState) => {
   return state.todo as IToDoState
-};
+}
