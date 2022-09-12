@@ -1,6 +1,5 @@
-
 export interface IToDo {
-    id?: string
-    name?: string
-    completed?: boolean
+  id?: string
+  name?: string
+  completed?: boolean
 }
