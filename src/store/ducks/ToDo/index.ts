@@ -21,17 +21,20 @@ const toDoSlice = createSlice({
     },
 
     save(state, action) {
-      state.data.push(action.payload)
+      state.loading = true
     },
     saveSuccess(state, action) {
-      state.data = action.payload.toDos
+      const task = action.payload
+      state.data = [...state.data, task]
+      state.loading = false
+      state.error = false
     },
     saveFailure(state, action) {
-      state.data = action.payload.toDos
+      state.error = true
+      state.loading = false
     },
 
     remove(state, action) {
-      // state.data = state.data.((todo) => todo.id !== action.payload.id)
       state.loading = true
     },
     removeSuccess(state, action) {

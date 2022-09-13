@@ -16,6 +16,7 @@ declare module 'styled-components' {
       shadow: string
       moduleIconActive: string
       background: string
+      textSecond: string
     }
   }
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.li`
   display: flex;
   align-items: center;
+  justify-content: space-around;
   column-gap: 10rem;
 
   padding: 16px;

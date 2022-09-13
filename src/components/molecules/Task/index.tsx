@@ -25,7 +25,7 @@ export function Task({ task }: TaskProps) {
         type="checkbox"
         checked={false}
         className="task__checkbox"
-        // onChange={e => onChangeCompleted(id)}
+      // onChange={e => onChangeCompleted(id)}
       />
 
       <span>{task?.name}</span>

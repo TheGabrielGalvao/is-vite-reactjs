@@ -16,5 +16,6 @@ export const defaulTheme: DefaultTheme = {
     shadow: config.gray200,
     moduleIconActive: config.white,
     background: config.white,
+    textSecond: config.white,
   },
 }
