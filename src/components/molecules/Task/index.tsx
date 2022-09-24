@@ -2,16 +2,14 @@ import { IToDo } from '../../../interfaces/IToDo'
 import { FaTrashAlt } from 'react-icons/fa'
 import { Container } from './styles'
 import { CustomInput } from '../../atoms/Input'
-import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux'
-import { actions, useToDo } from '../../../store/ducks/ToDo'
+import { useAppDispatch } from '../../../hooks/useRedux'
+import { actions } from '../../../store/ducks/ToDo'
 
 interface TaskProps {
   task?: IToDo
 }
 
 export function Task({ task }: TaskProps) {
-  const { data } = useAppSelector(useToDo)
-
   const dispatch = useAppDispatch()
 
   const handleDelete = () => {

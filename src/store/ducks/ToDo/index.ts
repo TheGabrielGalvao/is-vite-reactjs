@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { IToDoState } from './types'
 import { RootState } from '../../'
+import { filter, find, remove } from 'lodash'
 
 const INITIAL_STATE: IToDoState = {
   data: [],
@@ -12,7 +13,7 @@ const toDoSlice = createSlice({
   name: 'toDoReducer',
   initialState: INITIAL_STATE,
   reducers: {
-    get() { },
+    get() {},
     getSuccess(state, action) {
       state.data = action.payload
     },
@@ -38,7 +39,9 @@ const toDoSlice = createSlice({
       state.loading = true
     },
     removeSuccess(state, action) {
-      state.data = action.payload
+      // state.data = find(state.data, (x) => {
+      //   return x.id !== action.payload
+      // })
       state.loading = false
     },
     removeFailure(state, action) {
